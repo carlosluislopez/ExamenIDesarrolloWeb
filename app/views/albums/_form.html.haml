@@ -1,0 +1,22 @@
+= render partial: "shared/print_errors", locals: {obj: @album}
+
+= form_for @album do |f|
+	
+	.field
+		= f.label :singer_id, "Cantante"
+		= f.collection_select :singer_id, Singer.order(:name), :id, :name
+	
+	.field
+		= f.label :title, "Titulo"
+		= f.text_field :title
+
+	.field
+		= f.label :price, "Price"
+		= f.number_field :price
+
+	.field
+		= f.label :production_label, "Etiqueta produccion"
+		= f.text_field :production_label
+
+	.field
+		= f.submit

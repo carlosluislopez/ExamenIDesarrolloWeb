@@ -1,0 +1,16 @@
+- if flash[:notice].present?
+	.notice= flash[:notice]
+	
+%h1= @album.title
+%p
+	%strong Title
+	= @album.title
+%p
+	%strong Precio
+	= @album.price
+%p
+	%strong Etiqueta Produccion
+	= @album.production_label
+%br
+
+= link_to "Editar", edit_album_path

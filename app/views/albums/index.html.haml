@@ -1,0 +1,16 @@
+%h1 Albums
+%p Listado de albums en nuestra web
+
+- if @albums.any?
+	%table{border: "1"}
+		%tr
+			%th Titulo
+			%th Cantante
+			%th Fecha Creacion
+		= render @albums
+- else
+	%em No hay albums agregados
+
+%br
+
+= link_to "Nuevo Album", new_album_path

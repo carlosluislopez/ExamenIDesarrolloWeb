@@ -1,0 +1,19 @@
+%h1 Cantantes
+%p Listado de cantantes en nuestra web
+
+- if flash[:notice].present?
+	.notice= flash[:notice]
+
+- if @singers.any?
+	%table{border: "1"}
+		%tr
+			%th Nombre
+			%th Twitter
+			%th Cantidad Albums
+		= render @singers
+- else
+	%em No hay cantantes agregados
+
+%br
+
+= link_to "Nuevo Cantante", new_singer_path
