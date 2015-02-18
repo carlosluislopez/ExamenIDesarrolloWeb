@@ -13,4 +13,15 @@
 	= @album.production_label
 %br
 
-= link_to "Editar", edit_album_path
+- if @album.songs.any?
+	%table{border: "1"}
+		%tr
+			%th Titulo
+			%th Duracion
+			%th Musica y Lirica
+			%th
+	= render @album.songs
+- else
+	%em No hay albums agregados
+
+//= link_to "Nueva Cancion", new_album_songs_path
